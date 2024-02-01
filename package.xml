@@ -1,0 +1,23 @@
+<package format="3">
+  <name>bt_client</name>
+  <version>0.2.0</version>
+  <description>
+  Client to send a Nav2 goal using behavior trees
+  </description>
+
+  <maintainer email="izzo.riccaardo38@gmail.com">Riccardo Izzo</maintainer>
+  <license>MIT</license>
+  <author>Riccardo Izzo</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>behaviortree_cpp</depend>
+  <depend>behaviortree_ros2</depend>
+  <depend>btcpp_ros2_interfaces</depend>
+  <depend>std_msgs</depend>
+
+<export>
+  <build_type>ament_cmake</build_type>
+</export>
+
+</package>

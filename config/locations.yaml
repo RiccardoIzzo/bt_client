@@ -1,0 +1,6 @@
+# Defines object locations as [x, y, theta]
+Station A: [3.0, -1.0, 0.0]
+Station B: [1.0, 1.0, 0.0]
+Station C: [2.0, 1.0, 0.0]
+Station D: [3.0, 1.0, 0.0]
+Parking: [0.0, 0.0, 0.0]
