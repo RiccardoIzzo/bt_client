@@ -1,4 +1,4 @@
-#include "moveto_action.hpp"
+#include "MoveTo.hpp"
 
 MoveTo::MoveTo(const std::string& name,
     const NodeConfig& conf,

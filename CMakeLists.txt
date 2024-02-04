@@ -30,7 +30,9 @@ set(THIS_PACKAGE_DEPS
 # build client
 add_executable(client 
   src/main.cpp 
-  src/moveto_action.cpp
+  src/MoveTo.cpp
+  src/MoveToWithTimeout.cpp
+  src/isGoalReachable.cpp
 )
 ament_target_dependencies(client ${THIS_PACKAGE_DEPS}) 
 target_link_libraries(client ${YAML_CPP_LIBRARIES})
