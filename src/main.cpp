@@ -8,7 +8,7 @@ const std::string bt_xml_dir =
     ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
 
 // Select here the behavior tree
-const std::string tree_xml = "/navigation_timeout.xml";
+const std::string tree_xml = "/navigation_with_fallback.xml";
 
 int main(int argc, char **argv)
 {
