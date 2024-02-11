@@ -1,6 +1,8 @@
 #include "MoveTo.hpp"
 #include "MoveToWithTimeout.hpp"
 #include "isGoalReachable.hpp"
+#include "GenerateNextDestination.hpp"
+#include "isExplorationComplete.hpp"
 #include "ament_index_cpp/get_package_share_directory.hpp"
 
 // Define the directory for behavior tree XML files
@@ -8,7 +10,7 @@ const std::string bt_xml_dir =
     ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
 
 // Select here the behavior tree
-const std::string tree_xml = "/navigation_with_fallback.xml";
+const std::string tree_xml = "/explore_environment.xml";
 
 int main(int argc, char **argv)
 {
@@ -32,6 +34,12 @@ int main(int argc, char **argv)
 
     // Register the custom isGoalReachable node type with the BehaviorTreeFactory
     factory.registerNodeType<isGoalReachable>("isGoalReachable");
+
+    // Register the custom GenerateNextDestination node type with the BehaviorTreeFactory
+    factory.registerNodeType<GenerateNextDestination>("GenerateNextDestination");
+
+    // Register the custom GenerateNextDestination node type with the BehaviorTreeFactory
+    factory.registerNodeType<isExplorationComplete>("isExplorationComplete");
 
     // Create a behavior tree from an XML file located in the specified directory
     auto tree = factory.createTreeFromFile(bt_xml_dir + tree_xml);

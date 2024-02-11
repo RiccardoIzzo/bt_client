@@ -33,6 +33,8 @@ add_executable(client
   src/MoveTo.cpp
   src/MoveToWithTimeout.cpp
   src/isGoalReachable.cpp
+  src/GenerateNextDestination.cpp
+  src/isExplorationComplete.cpp
 )
 ament_target_dependencies(client ${THIS_PACKAGE_DEPS}) 
 target_link_libraries(client ${YAML_CPP_LIBRARIES})
