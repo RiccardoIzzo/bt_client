@@ -15,7 +15,8 @@ def generate_launch_description():
       name="client",
       parameters=[{
           "location_file": os.path.join(pkg_bt_client, "config", "locations.yaml")
-      }]
+      }],
+      output='screen'
   )
 
   ld = LaunchDescription()
