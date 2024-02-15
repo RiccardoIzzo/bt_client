@@ -77,7 +77,7 @@ NodeStatus MoveToWithTimeout::onFeedback(const std::shared_ptr<const Feedback> f
     // Check if the action succeeded within the timeout
     if (elapsed_time >= timeout_duration)
     {   
-        RCLCPP_ERROR(client->get_logger(), "Timeout exceeded (15s), goal not reached\n");
+        RCLCPP_ERROR(client->get_logger(), "Timeout exceeded (20s), goal not reached\n");
         return NodeStatus::FAILURE;
     }
     else

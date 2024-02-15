@@ -10,7 +10,7 @@ const std::string bt_xml_dir =
     ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
 
 // Select here the behavior tree
-const std::string tree_xml = "/explore_environment.xml";
+const std::string tree_xml = "/task1.xml";
 
 int main(int argc, char **argv)
 {

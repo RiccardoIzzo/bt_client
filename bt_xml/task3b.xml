@@ -1,5 +1,10 @@
- <root BTCPP_format="4">
-     <BehaviorTree>
+<!-- Navigation with fallback when a location is unrechable (isGoalReachable version) -->
+<!-- 
+    Visit these locations in sequence: Station A, Station B, Parking 
+    While moving to the location check if it is reachable, if not skip immediately to the next one
+-->
+<root BTCPP_format="4">
+    <BehaviorTree>
         <Sequence> 
             <ForceSuccess>
                 <Parallel success_count="2" failure_count="1">                 <!-- return SUCCESS if both subtasks return SUCCESS  -->
@@ -15,5 +20,5 @@
             </ForceSuccess>
             <MoveTo name="go_to_parking"   location="Parking"/>                <!-- move to Parking -->
         </Sequence>
-     </BehaviorTree>
- </root>
+    </BehaviorTree>
+</root>

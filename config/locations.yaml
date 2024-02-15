@@ -5,7 +5,7 @@ Station B: [1.0, 1.0, 0.0]
 Station C: [2.0, 1.0, 0.0]
 Station D: [3.0, 1.0, 0.0]
 Parking: [0.0, 0.0, 0.0]
-# MoveToWithTimeout
+# --- MoveToWithTimeout ---
 Point A: [3.0, -1.0, 0.0]
 Point B: [1.8, -1.2, 0.0]
 Point C: [1.0, -1.0, 0.0]

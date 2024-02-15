@@ -1,8 +1,0 @@
- <root BTCPP_format="4">
-     <BehaviorTree>
-        <Sequence>
-            <MoveTo name="go_to_station_A" location="Station A"/>      <!-- move to Station A -->
-            <MoveTo name="go_to_station_B" location="Station B"/>      <!-- move to Station B -->
-        </Sequence>
-     </BehaviorTree>
- </root>

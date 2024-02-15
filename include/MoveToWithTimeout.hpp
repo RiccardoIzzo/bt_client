@@ -14,7 +14,7 @@
 
 using namespace BT;
 
-#define TIMEOUT 15
+#define TIMEOUT 20
 
 // Definition of the MoveTo class, inheriting from RosActionNode for navigation
 class MoveToWithTimeout: public RosActionNode<nav2_msgs::action::NavigateToPose>
