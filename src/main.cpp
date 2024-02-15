@@ -1,9 +1,13 @@
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_action/rclcpp_action.hpp"
+#include "behaviortree_ros2/plugins.hpp"
+#include "ament_index_cpp/get_package_share_directory.hpp"
+
 #include "MoveTo.hpp"
 #include "MoveToWithTimeout.hpp"
 #include "isGoalReachable.hpp"
 #include "GenerateNextDestination.hpp"
 #include "isExplorationComplete.hpp"
-#include "ament_index_cpp/get_package_share_directory.hpp"
 
 // Define the directory for behavior tree XML files
 const std::string bt_xml_dir =

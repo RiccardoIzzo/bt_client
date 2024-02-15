@@ -4,9 +4,6 @@
 #include <sstream>
 #include <optional>
 
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
-#include "behaviortree_ros2/plugins.hpp"
 #include "behaviortree_ros2/bt_action_node.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "yaml-cpp/yaml.h"

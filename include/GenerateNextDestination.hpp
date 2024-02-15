@@ -1,12 +1,6 @@
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
-#include "behaviortree_ros2/plugins.hpp"
 #include "behaviortree_ros2/bt_action_node.hpp"
-
 #include <chrono>
 #include <cstdlib> 
-#include <vector>
-#include <algorithm>
 
 using namespace BT;
 using namespace std::chrono;
