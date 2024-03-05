@@ -5,9 +5,9 @@
 #include <optional>
 
 #include "behaviortree_ros2/bt_action_node.hpp"
-#include "action_aruco_interfaces/action/follow_aruco.hpp"
+#include "aruco_action_interfaces/action/follow_aruco.hpp"
 
-using Aruco = action_aruco_interfaces::action::FollowAruco;
+using Aruco = aruco_action_interfaces::action::FollowAruco;
 using GoalHandleAruco = rclcpp_action::ServerGoalHandle<Aruco>;
 
 using namespace BT;
