@@ -8,13 +8,14 @@
 #include "isGoalReachable.hpp"
 #include "GenerateNextDestination.hpp"
 #include "isExplorationComplete.hpp"
+#include "FollowAruco.hpp"
 
 // Define the directory for behavior tree XML files
 const std::string bt_xml_dir =
     ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
 
 // Select here the behavior tree
-const std::string tree_xml = "/task1.xml";
+const std::string tree_xml = "/task6.xml";
 
 int main(int argc, char **argv)
 {
@@ -42,8 +43,16 @@ int main(int argc, char **argv)
     // Register the custom GenerateNextDestination node type with the BehaviorTreeFactory
     factory.registerNodeType<GenerateNextDestination>("GenerateNextDestination");
 
-    // Register the custom GenerateNextDestination node type with the BehaviorTreeFactory
+    // Register the custom isExplorationComplete node type with the BehaviorTreeFactory
     factory.registerNodeType<isExplorationComplete>("isExplorationComplete");
+
+    auto aruco_node = std::make_shared<rclcpp::Node>("bt_aruco_client_node");
+    RosNodeParams aruco_params; 
+    aruco_params.nh = aruco_node;
+    aruco_params.default_port_value = "/aruco";
+
+    // Register the custom FollowAruco node type with the BehaviorTreeFactory
+    factory.registerNodeType<FollowAruco>("FollowAruco", aruco_params);
 
     // Create a behavior tree from an XML file located in the specified directory
     auto tree = factory.createTreeFromFile(bt_xml_dir + tree_xml);

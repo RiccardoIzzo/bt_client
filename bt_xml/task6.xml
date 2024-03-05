@@ -1,0 +1,9 @@
+<!-- Follow aruco -->
+<!-- Find the aruco given the id -->
+<root BTCPP_format="4">
+    <BehaviorTree>
+        <Sequence>
+            <FollowAruco id="12345"/>      <!-- Follow aruco given an id -->
+        </Sequence>
+    </BehaviorTree>
+</root>

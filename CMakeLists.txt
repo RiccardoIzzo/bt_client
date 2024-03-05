@@ -12,6 +12,7 @@ find_package(std_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(btcpp_ros2_interfaces REQUIRED)
 find_package(yaml-cpp REQUIRED)
+find_package(action_aruco_interfaces REQUIRED)
 
 include_directories(
     include
@@ -23,6 +24,7 @@ set(THIS_PACKAGE_DEPS
     nav2_msgs
     btcpp_ros2_interfaces 
     yaml-cpp
+    action_aruco_interfaces
     ament_index_cpp
     )
 
@@ -35,6 +37,7 @@ add_executable(client
   src/isGoalReachable.cpp
   src/GenerateNextDestination.cpp
   src/isExplorationComplete.cpp
+  src/FollowAruco.cpp
 )
 ament_target_dependencies(client ${THIS_PACKAGE_DEPS}) 
 target_link_libraries(client ${YAML_CPP_LIBRARIES})
