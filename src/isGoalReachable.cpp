@@ -1,3 +1,12 @@
+/**
+ * @file isGoalReachable.cpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "isGoalReachable.hpp"
 
 isGoalReachable::isGoalReachable(const std::string& name, 
@@ -6,14 +15,12 @@ isGoalReachable::isGoalReachable(const std::string& name,
 {
 }
 
-// Define the provided input ports for the isGoalReachable action
 PortsList isGoalReachable::providedPorts()
 {
     // prob input identify the probability of a goal pose to be reachable
     return{ BT::InputPort<float>("prob") };
 }
 
-// Handle the node's behavior when it starts its execution
 NodeStatus isGoalReachable::onStart()
 {   
     // Declare a variable to store the probability input
@@ -28,7 +35,6 @@ NodeStatus isGoalReachable::onStart()
     return NodeStatus::RUNNING;
 }
 
-// Handle the node's behavior while it is running
 NodeStatus isGoalReachable::onRunning()
 {   
     // Check if the current time has exceeded the deadline
@@ -43,12 +49,12 @@ NodeStatus isGoalReachable::onRunning()
             return NodeStatus::FAILURE;
         }
     }
+    // If the deadline has not been exceeded, keep running
     else {
         return NodeStatus::RUNNING;
     }
 }
 
-// Handle any feedback during the execution of the node
 void isGoalReachable::onHalted()
 {
     // No specific actions defined for feedback during the execution halt

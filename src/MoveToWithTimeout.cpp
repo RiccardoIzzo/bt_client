@@ -1,3 +1,12 @@
+/**
+ * @file MoveToWithTimeout.cpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "MoveToWithTimeout.hpp"
 
 MoveToWithTimeout::MoveToWithTimeout(const std::string& name,

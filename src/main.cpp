@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @brief Main function for the behavior tree client node
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "behaviortree_ros2/plugins.hpp"
@@ -11,12 +21,18 @@
 #include "FollowAruco.hpp"
 
 // Define the directory for behavior tree XML files
-const std::string bt_xml_dir =
-    ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
+const std::string bt_xml_dir = ament_index_cpp::get_package_share_directory("bt_client") + "/bt_xml";
 
 // Select here the behavior tree
 const std::string tree_xml = "/task6.xml";
 
+/**
+ * @brief Main function for the behavior tree client node
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);

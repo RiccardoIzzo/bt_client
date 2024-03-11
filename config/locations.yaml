@@ -1,4 +1,4 @@
-# Defines object locations as [x, y, theta]
+# Defines object locations as [x, y, theta] in the robot's frame for a bunch of tasks
 # --- MoveTo ---
 Station A: [3.0, -1.0, 0.0]
 Station B: [1.0, 1.0, 0.0]

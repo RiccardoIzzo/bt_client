@@ -1,3 +1,12 @@
+/**
+ * @file MoveTo.cpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "MoveTo.hpp"
 
 MoveTo::MoveTo(const std::string& name,
@@ -8,7 +17,6 @@ MoveTo::MoveTo(const std::string& name,
     client = params.nh;
 }
 
-// Define the provided input ports for the MoveTo action
 PortsList MoveTo::providedPorts()
 {
     return {
@@ -16,7 +24,6 @@ PortsList MoveTo::providedPorts()
     };
 }
 
-// Set the goal for the MoveTo action based on the specified location
 bool MoveTo::setGoal(RosActionNode::Goal &goal)
 {
     // Retrieve the location from the input port
@@ -28,7 +35,7 @@ bool MoveTo::setGoal(RosActionNode::Goal &goal)
     YAML::Node locations = YAML::LoadFile(file_path);
     // Extract the coordinates for the specified location
     std::vector<float> current_goal = locations[loc].as<std::vector<float>>();
-
+    // Set the goal for the action
     goal.pose.header.stamp = client->now();
     goal.pose.header.frame_id = "map";
 
@@ -42,21 +49,18 @@ bool MoveTo::setGoal(RosActionNode::Goal &goal)
     return true;
 }
 
-// Handle the result received after executing the MoveTo action
 NodeStatus MoveTo::onResultReceived(const RosActionNode::WrappedResult &wr)
 {   
     RCLCPP_INFO(client->get_logger(), "Goal reached\n");
     return NodeStatus::SUCCESS;
 }
 
-// Handle failure cases for the MoveTo action
 NodeStatus MoveTo::onFailure(ActionNodeErrorCode error)
 {   
     RCLCPP_ERROR(node_->get_logger(), "Error: %d", error);
     return NodeStatus::FAILURE;
 }
 
-// Handle feedback during the execution of the MoveTo action
 NodeStatus MoveTo::onFeedback(const std::shared_ptr<const Feedback> feedback)
 {
     return NodeStatus::RUNNING;

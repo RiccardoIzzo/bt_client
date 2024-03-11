@@ -1,3 +1,12 @@
+/**
+ * @file GenerateNextDestination.cpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "GenerateNextDestination.hpp"
 
 GenerateNextDestination::GenerateNextDestination(const std::string& name, 
@@ -6,14 +15,12 @@ GenerateNextDestination::GenerateNextDestination(const std::string& name,
 {
 }
 
-// Define the provided input ports for the GenerateNextDestination action
 PortsList GenerateNextDestination::providedPorts()
 {
     // new_goal input identify the new goal destination
     return{ BT::OutputPort<std::string>("new_goal")};
 }
 
-// Handle the node's behavior
 NodeStatus GenerateNextDestination::tick()
 {   
     // mock locations to identify new goal destinations

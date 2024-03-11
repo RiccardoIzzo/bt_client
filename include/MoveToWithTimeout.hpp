@@ -1,3 +1,13 @@
+/**
+ * @file MoveToWithTimeout.hpp
+ * @author Riccardo Andrea Izzo (riccardo.izzo@mail.polimi.it)
+ * @brief Action node that sends a navigation goal to the Nav2 action server, it wait until the timeout is reached
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "behaviortree_ros2/bt_action_node.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "yaml-cpp/yaml.h"
@@ -9,7 +19,10 @@ using namespace BT;
 
 #define TIMEOUT 20
 
-// Definition of the MoveTo class, inheriting from RosActionNode for navigation
+/**
+ * @brief Definition of MoveToWithTimeout class inheriting from RosActionNode, it manages navigation goals with timeout
+ * 
+ */
 class MoveToWithTimeout: public RosActionNode<nav2_msgs::action::NavigateToPose>
 {
 public:

@@ -1,9 +1,11 @@
 <!-- Follow aruco -->
-<!-- Find the aruco given the id -->
+<!-- 
+    Point the aruco with the corresponding id with the manipulator arm
+-->
 <root BTCPP_format="4">
     <BehaviorTree>
         <Sequence>
-            <FollowAruco id="12345"/>      <!-- Follow aruco given an id -->
+            <FollowAruco id="10"/>      <!-- Follow aruco given the id -->
         </Sequence>
     </BehaviorTree>
 </root>
