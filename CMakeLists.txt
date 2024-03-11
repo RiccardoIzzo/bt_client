@@ -12,7 +12,7 @@ find_package(std_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(btcpp_ros2_interfaces REQUIRED)
 find_package(yaml-cpp REQUIRED)
-find_package(aruco_action_interfaces REQUIRED)
+find_package(igus_rebel_commander REQUIRED)
 
 include_directories(
     include
@@ -24,7 +24,7 @@ set(THIS_PACKAGE_DEPS
     nav2_msgs
     btcpp_ros2_interfaces 
     yaml-cpp
-    aruco_action_interfaces
+    igus_rebel_commander
     ament_index_cpp
     )
 
